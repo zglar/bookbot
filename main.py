@@ -1,11 +1,17 @@
+import sys
 from stats import get_num_words
 from stats import get_num_characters
-from stats import char_count_report
 
 def main():
-    filepath = "books/frankenstein.txt"
-    words_count = get_num_words()
-    char_count = char_count_report()
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    filepath = sys.argv[1]
+
+    words_count = get_num_words(filepath)
+    char_count = get_num_characters(filepath)
+
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {filepath}...")
     print("----------- Word Count ----------")
