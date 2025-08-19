@@ -1,7 +1,8 @@
 from stats import get_num_words
+from stats import get_num_characters
 
 def main():
-    words_count = get_num_words()
-    print(f"{words_count} words found in the document")
+    char_count = get_num_characters()
+    print(char_count)
 
 main()
